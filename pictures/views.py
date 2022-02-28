@@ -7,9 +7,13 @@ def all_img(request):
   images = Image.display_images()
   return render(request, 'all.html',{"images":images,})
 
-def test(request):
-  test1 = 'grace'
-  return render(request, 'location.html',{"test":test,})
+def image(request,image_id):
+  try:
+    image = Image.objects.get(id = image_id)
+
+  except DoesNotExist:
+    raise Http404()
+  return render(request, '',{"image":image,})
 
 def amazing(request):
   test2 = 'Mwesh'
