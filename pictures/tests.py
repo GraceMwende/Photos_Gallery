@@ -46,3 +46,26 @@ class LocationTest(TestCase):
     locations = Location.objects.all()
     self.Nairobi.delete_location()
     self.assertTrue(len(locations) == 0)
+
+class ImageTestClass(TestCase):
+  def setUp(self):
+    # create new category and save
+    self.travel = Category(cat_name='Travel')
+    self.save_category()
+
+    # create a new location and save
+    self.Nairobi = Location(loc_name='Nairobi')
+    self.save_location()
+
+    # create image instance
+    self.new_image = Image(img_name='love',img_description='sweet couple',location=self.Nairobi,category=self.travel)
+    self.new_image.save()
+
+  def tearDown(self):
+    Location.objects.all.delete()
+    Category.objects.all.delete()
+    Image.objects.all().delete()
+
+  # test to display_images
+  self.new_image = Image(img_name='love',img_description='sweet couple',location=self.Nairobi,category=self.travel)
+  self.new_image.save()

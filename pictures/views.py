@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse,Http404
+from .models import Location,Category,Image
 # Create your views here.
 
-def welcome(request):
-  return render(request, 'all.html')
+def all_img(request):
+  images = Image.display_images()
+  return render(request, 'all.html',{"images":images,})
 
 def test(request):
   test1 = 'grace'

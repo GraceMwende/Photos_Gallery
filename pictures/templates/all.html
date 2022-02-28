@@ -2,5 +2,16 @@
 
 {% block content %}
 {{block.super}}
-grace
+{% for img in images %}
+<!-- {{img.img_name}}
+<img src="{{img.image.url}}" alt=""> -->
+
+<div class="card" style="width: 25rem;">
+  <img src="{{img.image.url}}" class="card-img-top" alt="{{img.img_name}}">
+  <div class="card-body">
+    <h5 class="card-title">{{img.img_name}}</h5>
+  </div>
+</div>
+{% endfor %}
+
 {% endblock %}
