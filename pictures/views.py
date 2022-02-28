@@ -3,32 +3,15 @@ from django.http import HttpResponse,Http404
 # Create your views here.
 
 def welcome(request):
-  return HttpResponse('Welcome to gallery')
+  return render(request, 'all.html')
 
 def test(request):
   test1 = 'grace'
-  html = f'''
-        <html>
-        <body>
-        <h1>Hi {test1}</h1>
-        </body>
-        </html>
-        
-  '''
-  return HttpResponse(html)
+  return render(request, 'location.html',{"test":test,})
 
 def amazing(request):
   test2 = 'Mwesh'
-  html = f'''
-        <html>
-        <body>
-        <h1>Hi {test2}</h1>
-        </body>
-        </html>
-        
-  '''
-  return HttpResponse(html)
-
+  return render(request,'search.html',{"test":test2})
 def wuueh(request):
   try:
     t = 'hello'
