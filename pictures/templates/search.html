@@ -13,14 +13,20 @@
   </div>
 
   <div class="container d-flex flex-wrap">
-      {% if categories %}
-        {% for category in categories %}
-          <div class="col-6">
-              <img src="{{category.image.url}}" alt="">
-              <h1>{{category.img_name}}</h1>
-          </div>
-        {% endfor%}
-      {% endif %} 
+    {% if categories %}
+    {% for category in categories %}
+    <div class="col-6">
+      <div class="card mx-2 my-2">
+        <img src="{{category.image.url}}" class="card-img-top" alt="{{category.img_name}}">
+        <div class="card-body">
+          <h5 class="card-title">{{category.img_name}}</h5>
+        </div>
+      </div>
+      <!-- <img src="{{category.image.url}}" alt="">
+              <h1>{{category.img_name}}</h1> -->
+    </div>
+    {% endfor%}
+    {% endif %}
   </div>
 </div>
 {% endblock %}
