@@ -13,6 +13,7 @@ class Category(models.Model):
   def delete_category(self):
     self.delete()
 
+
 class Location(models.Model):
   loc_name = models.CharField(max_length=30)
 
@@ -45,4 +46,9 @@ class Image(models.Model):
   def display_images(cls):
     img = cls.objects.all()
     return img
+    
+  @classmethod
+  def search_by_category(cls,search_term):
+    categ = cls.objects.filter(category__cat_name__icontains=search_term)
+    return categ
 

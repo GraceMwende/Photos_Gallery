@@ -2,5 +2,23 @@
 
 {% block content %}
 {{block.super}}
-{{test}}
+<div class="container">
+  <div class="row">
+
+    {% if categories %}
+    <h2>Found {{categories|length}} of searched term {{message}}</h2>
+    {% else %}
+    <h2>Found 0 categories for the search term {{message}}</h2>
+    {% endif %}
+  </div>
+
+  <div class="row">
+    {% if categories %}
+    {% for category in categories %}
+    <img src="{{category.image.url}}" alt="">
+    <h1>{{category.img_name}}</h1>
+    {% endfor%}
+    {% endif %}
+  </div>
+</div>
 {% endblock %}

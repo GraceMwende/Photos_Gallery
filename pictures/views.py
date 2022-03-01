@@ -15,13 +15,15 @@ def image(request,image_id):
     raise Http404()
   return render(request, '',{"image":image,})
 
-def amazing(request):
-  test2 = 'Mwesh'
-  return render(request,'search.html',{"test":test2})
-def wuueh(request):
-  try:
-    t = 'hello'
+def search_results(request):
 
-  except ValueError:
-    #raise 404 when valueError is thrown
-    raise Http404()
+  if 'category' in request.GET and request.GET['category']:
+    search_term  = request.GET.get("category")
+    searched_categories = Image.search_by_category(search_term)
+    message = f'{search_term}'
+
+    return render(request,'search.html',{'message':message,'categories':searched_categories})
+
+  else:
+    message = "You have searched for any item"
+    return render(request, 'search.html',{'message':message})
