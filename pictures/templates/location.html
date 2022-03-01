@@ -2,8 +2,16 @@
 
 {% block content %}
 {{block.super}}
+<div class="container d-flex flex-wrap">
   {% for location in locations %}
-    <img src="{{location.image.url}}" alt="{{location.img_name}}">
-   {{location.img_name}}
+  <div class="col-6">
+    <div class="card mx-2 my-2">
+      <img src="{{location.image.url}}" class="card-img-top" alt="{{location.img_name}}">
+      <div class="card-body">
+        <h5 class="card-title">{{location.img_name}}</h5>
+      </div>
+    </div>
+  </div>
   {% endfor %}
+</div>
 {% endblock %}
