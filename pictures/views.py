@@ -31,7 +31,9 @@ def search_results(request):
 
 def search_locations(request,location):
   loc = Image.filter_by_location(location)
-  return render(request, 'location.html',{'location':loc})
+  print(loc)
+  print(location)
+  return render(request, 'location.html',{'locations':loc})
 
 # def search_location(request,location_id):
 #   try:

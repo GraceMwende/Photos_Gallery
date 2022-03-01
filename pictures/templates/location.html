@@ -2,6 +2,8 @@
 
 {% block content %}
 {{block.super}}
-<img src="{{location.image.url}}" alt="{{location.img_name}}">
-{{location.img_name}}
+  {% for location in locations %}
+    <img src="{{location.image.url}}" alt="{{location.img_name}}">
+   {{location.img_name}}
+  {% endfor %}
 {% endblock %}
