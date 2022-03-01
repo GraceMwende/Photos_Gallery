@@ -8,7 +8,7 @@
   <h2 class="card-title">Filter by Location</h2>
   {% for location in locations %}
   <!-- <a href="{% url 'location' location.id}"><button class="btn btn-warning">{{location.loc_name}}</button></a> -->
-  <a href="location/{{location.id}}"><button class="btn btn-warning">{{location.loc_name}}</button></a>
+  <a href="location/{{location.id}}"><button class="btn btn-outline-warning">{{location.loc_name}}</button></a>
   {% endfor %}
 </div>
 
@@ -19,8 +19,7 @@
       <img src="{{img.image.url}}" class="img-fluid" alt="{{img.img_name}}">
       <div class="card-body">
         <h5 class="card-title">{{img.img_name}}</h5>
-        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-          data-bs-target="#exampleModal{{img.id}}">View
+        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal{{img.id}}">View
           Details</button>
       </div>
     </div>
