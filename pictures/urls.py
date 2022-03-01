@@ -5,7 +5,8 @@ from django.conf import settings
 
 urlpatterns = [
   path('',views.all_img, name='all_images'),
-  path('search/',views.search_results, name='search_results')
+  path('search/',views.search_results, name='search_results'),
+  re_path('location/(/d+)',views.search_location,name='location')
 ]
 
 if settings.DEBUG:

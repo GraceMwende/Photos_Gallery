@@ -27,3 +27,7 @@ def search_results(request):
   else:
     message = "You have searched for any item"
     return render(request, 'search.html',{'message':message})
+
+def search_location(request,location):
+  loc = Image.filter_by_location(location)
+  return render(request, 'location.html',{'location':loc})
