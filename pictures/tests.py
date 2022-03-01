@@ -69,3 +69,4 @@ class ImageTestClass(TestCase):
   # test to display_images
   self.new_image = Image(img_name='love',img_description='sweet couple',location=self.Nairobi,category=self.travel)
   self.new_image.save()
+  
