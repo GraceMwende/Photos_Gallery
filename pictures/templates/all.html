@@ -4,22 +4,24 @@
 {{block.super}}
 <!-- {{img.img_name}}
 <img src="{{img.image.url}}" alt=""> -->
-<button type="button" class="btn btn-success">Nairobi</button>
-<button type="button" class="btn btn-success">Nakuru</button>
-<button type="button" class="btn btn-success">Diani</button>
-<button type="button" class="btn btn-success">Uk</button>
-<div class="container">
-  <div class="row">
-    {% for img in images %}
-    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-      <div class="card">
-        <img src="{{img.image.url}}" class="card-img-top" alt="{{img.img_name}}">
-        <div class="card-body">
-          <h5 class="card-title">{{img.img_name}}</h5>
-          <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-            data-bs-target="#exampleModal{{img.id}}">View
-            Details</button>
-        </div>
+<div class="container text-center mb-5">
+  <h2 class="card-title">Filter by Location</h2>
+  {% for location in locations %}
+  <!-- <a href="{% url 'location' location.id}"><button class="btn btn-warning">{{location.loc_name}}</button></a> -->
+  <a href="location/{{location.id}}"><button class="btn btn-warning">{{location.loc_name}}</button></a>
+  {% endfor %}
+</div>
+
+<div class="container d-flex flex-wrap">
+  {% for img in images %}
+  <div class="col-4">
+    <div class="card">
+      <img src="{{img.image.url}}" class="img-fluid" alt="{{img.img_name}}">
+      <div class="card-body">
+        <h5 class="card-title">{{img.img_name}}</h5>
+        <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+          data-bs-target="#exampleModal{{img.id}}">View
+          Details</button>
       </div>
     </div>
   </div>
@@ -46,13 +48,13 @@
       </div>
     </div>
   </div>
+
+  {% empty %}
+  <div class="row">
+    <div class="text-center">There are no Images</div>
+
+  </div>
+
+  {% endfor %}
 </div>
-
-{% empty %}
-<div class="row">
-  <div class="text-center">There are no Images</div>
-
-</div>
-{% endfor %}
-
 {% endblock %}

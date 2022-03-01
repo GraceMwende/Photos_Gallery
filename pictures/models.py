@@ -26,6 +26,11 @@ class Location(models.Model):
   def delete_location(self):
     self.delete()
 
+  @classmethod
+  def display_locations(cls):
+    locs = cls.objects.all()
+    return locs
+
 class Image(models.Model):
   image = models.ImageField(upload_to='images/',null=False)
   img_name = models.CharField(max_length=30)

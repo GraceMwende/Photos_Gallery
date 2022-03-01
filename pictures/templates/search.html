@@ -12,13 +12,15 @@
     {% endif %}
   </div>
 
-  <div class="row">
-    {% if categories %}
-    {% for category in categories %}
-    <img src="{{category.image.url}}" alt="">
-    <h1>{{category.img_name}}</h1>
-    {% endfor%}
-    {% endif %}
+  <div class="container d-flex flex-wrap">
+      {% if categories %}
+        {% for category in categories %}
+          <div class="col-6">
+              <img src="{{category.image.url}}" alt="">
+              <h1>{{category.img_name}}</h1>
+          </div>
+        {% endfor%}
+      {% endif %} 
   </div>
 </div>
 {% endblock %}

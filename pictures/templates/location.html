@@ -2,6 +2,6 @@
 
 {% block content %}
 {{block.super}}
-{{location.image}}
+<img src="{{location.image.url}}" alt="{{location.img_name}}">
 {{location.img_name}}
 {% endblock %}
