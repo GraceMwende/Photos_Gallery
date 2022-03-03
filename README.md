@@ -25,7 +25,17 @@ personal gallery application that you display your photos for others to see.
 
 - Do a git clone of the repo to your local machine
   git clone https://github.com/GraceMwende/Photos_Gallery.git
-- Run in your browser
+- Navigate to the projec folder
+  cd Photos_Gallery
+- Create and activate the virtual environment
+    - python3 -m venv --without-pip virtual
+    - source virtual/bin/activate
+    - curl https://bootstrap.pypa.io/get-pip.py | python
+- install dependedencis by pip install -r requirements.txt
+- Run the server
+  python3 manage.py runserver
+- Open the application in browser 127.0.0.1:8000.
+
 
 ## Technologies Used
 
@@ -33,10 +43,12 @@ personal gallery application that you display your photos for others to see.
 - CSS
 - Bootstrap
 - Django
+- Postgres sql database
 
 ## Support and contact details
 
 Please contact me incase of anything
+grace.micheni@student.moringaschool.com
 
 ### License
 
