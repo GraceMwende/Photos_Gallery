@@ -24,16 +24,17 @@ personal gallery application that you display your photos for others to see.
 ## Setup/Installation Requirements
 
 - Do a git clone of the repo to your local machine
-  git clone https://github.com/GraceMwende/Photos_Gallery.git
+    - git clone https://github.com/GraceMwende/Photos_Gallery.git
 - Navigate to the projec folder
   cd Photos_Gallery
 - Create and activate the virtual environment
     - python3 -m venv --without-pip virtual
     - source virtual/bin/activate
     - curl https://bootstrap.pypa.io/get-pip.py | python
-- install dependedencis by pip install -r requirements.txt
+- install dependedencis by 
+    - pip install -r requirements.txt
 - Run the server
-  python3 manage.py runserver
+    - python3 manage.py runserver
 - Open the application in browser 127.0.0.1:8000.
 
 
